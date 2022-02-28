@@ -41,7 +41,7 @@ const loadDetails = phoneId => {
 // Display Details
 const displayDetails = phone => {
     const detailsContainer = document.getElementById('phone-details');
-    console.log(phone)
+    console.log(phone.mainFeatures)
     detailsContainer.innerHTML = `
         <div class="card mb-3">
             <div class="row g-0">
@@ -54,15 +54,14 @@ const displayDetails = phone => {
                         <h5 class="card-text">${phone.releaseDate}</h5>
                         <p class="card-text">
                             <ul class="list-unstyled">
-                                <li class="fw-bold">Main Features</li>
-                                <li>It appears completely unstyled.</li>
-                                <li>Structurally, it's still a list.</li>
-                                <li>However, this style only applies to immediate child elements.</li>
-                                <li>Nested lists:
-                                <ul>
-                                    <li>are unaffected by this style</li>
-                                    <li>will still show a bullet</li>
-                                    <li>and have appropriate left margin</li>
+                                <li class="h5">Main Features</li>
+                                <li><span class="h6">CPU:</span> ${phone.mainFeatures.chipSet}</li>
+                                <li><span class="h6">Display:</span> ${phone.mainFeatures.displaySize}</li>
+                                <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
+                                <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
+                                <li onclick="loadSensors(${phone.mainFeatures.sensors})">Sensors:
+                                <ul id="sensors">
+                                    
                                 </ul>
                                 </li>
                                 <li>This may still come in handy in some situations.</li>
