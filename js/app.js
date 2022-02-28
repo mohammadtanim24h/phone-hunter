@@ -16,10 +16,10 @@ const displayPhones = phones => {
         console.log(phone);
         const div = document.createElement('div');
         div.classList.add('phone');
-        div.classList.add('col-lg-4', 'mx-auto', 'my-3');
+        div.classList.add('col-lg-4', 'my-3');
         div.innerHTML = `
             <div class="card mx-auto" style="width: 18rem;">
-                <img src="${phone.image}" class="card-img-top" alt="phone-image">
+                <img src="${phone.image}" class="card-img-top img-fluid" alt="phone-image">
                 <div class="card-body">
                     <h4 class="card-title my-3">${phone.phone_name}</h4>
                     <h5 class="my-3">${phone.brand}</h5>
