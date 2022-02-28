@@ -5,6 +5,11 @@
     box-shadow: 3px 3px 10px gray;
 }
 
+/* no result */
+#no-result {
+    display: none;
+}
+
 /* Phone Details */
 #phone-details {
     width: 85%;

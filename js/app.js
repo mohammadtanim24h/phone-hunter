@@ -2,6 +2,7 @@
 const loadPhones = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
+    searchField.value = '';
     // Fetching data
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res => res.json())
@@ -10,6 +11,14 @@ const loadPhones = () => {
 
 // Display Phones
 const displayPhones = phones => {
+    // No result error handling
+    if(phones.length == 0) {
+        document.getElementById('phone-container').innerHTML = '';
+        document.getElementById('no-result').style.display = 'block';
+        return;
+    }
+    document.getElementById('phone-container').innerHTML = '';
+    document.getElementById('no-result').style.display = 'none';
     const phoneContainer = document.getElementById('phone-container');
     const twentyPhones = phones.slice(0, 20);
     twentyPhones.forEach(phone => {
@@ -59,7 +68,7 @@ const displayDetails = phone => {
                                 <li><span class="h6">Display:</span> ${phone.mainFeatures.displaySize}</li>
                                 <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
                                 <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
-                                <li onclick="loadSensors(${phone.mainFeatures.sensors})">Sensors:
+                                <li>Sensors:
                                 <ul id="sensors">
                                     
                                 </ul>
