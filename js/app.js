@@ -1,3 +1,4 @@
+// Load Phones
 const loadPhones = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
@@ -8,7 +9,6 @@ const loadPhones = () => {
 }
 
 // Display Phones
-
 const displayPhones = phones => {
     const phoneContainer = document.getElementById('phone-container');
     const twentyPhones = phones.slice(0, 20);
@@ -39,7 +39,38 @@ const loadDetails = phoneId => {
 }
 
 // Display Details
-
 const displayDetails = phone => {
-    console.log(phone);
+    const detailsContainer = document.getElementById('phone-details');
+    console.log(phone)
+    detailsContainer.innerHTML = `
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img src="${phone.image}" class="img-fluid rounded-start w-50" alt="phone-image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">${phone.name}</h4>
+                        <h5 class="card-text">${phone.releaseDate}</h5>
+                        <p class="card-text">
+                            <ul class="list-unstyled">
+                                <li class="fw-bold">Main Features</li>
+                                <li>It appears completely unstyled.</li>
+                                <li>Structurally, it's still a list.</li>
+                                <li>However, this style only applies to immediate child elements.</li>
+                                <li>Nested lists:
+                                <ul>
+                                    <li>are unaffected by this style</li>
+                                    <li>will still show a bullet</li>
+                                    <li>and have appropriate left margin</li>
+                                </ul>
+                                </li>
+                                <li>This may still come in handy in some situations.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
