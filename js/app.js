@@ -3,6 +3,8 @@ const loadPhones = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     searchField.value = '';
+    // Spinner
+    document.getElementById('spinner').style.display = 'block';
     // Fetching data
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
         .then(res => res.json())
@@ -13,10 +15,12 @@ const loadPhones = () => {
 const displayPhones = phones => {
     // No result error handling
     if(phones.length == 0) {
+        document.getElementById('spinner').style.display = 'none';
         document.getElementById('phone-container').innerHTML = '';
         document.getElementById('no-result').style.display = 'block';
         return;
     }
+    document.getElementById('spinner').style.display = 'none';
     document.getElementById('phone-container').innerHTML = '';
     document.getElementById('phone-details').innerHTML = '';
     document.getElementById('no-result').style.display = 'none';
