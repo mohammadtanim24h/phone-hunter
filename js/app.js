@@ -17,17 +17,19 @@ const displayPhones = phones => {
     if(phones.length == 0) {
         document.getElementById('spinner').style.display = 'none';
         document.getElementById('phone-container').innerHTML = '';
+        document.getElementById('phone-details').innerHTML = '';
         document.getElementById('no-result').style.display = 'block';
         return;
     }
     document.getElementById('spinner').style.display = 'none';
+    // Removing previous results
     document.getElementById('phone-container').innerHTML = '';
     document.getElementById('phone-details').innerHTML = '';
     document.getElementById('no-result').style.display = 'none';
     const phoneContainer = document.getElementById('phone-container');
+    // Slicing Array
     const twentyPhones = phones.slice(0, 20);
     twentyPhones.forEach(phone => {
-        // console.log(phone);
         const div = document.createElement('div');
         div.classList.add('phone');
         div.classList.add('col-lg-4', 'my-3');
