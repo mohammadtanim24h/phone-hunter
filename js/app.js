@@ -75,8 +75,13 @@ const displayDetails = phone => {
                                     </ul>
                                 </li>
                                 <li><span class="h6">Others:</span>
-                                    <ul id="others">
-                                        
+                                    <ul id="others" class="list-unstyled">
+                                        <li>Bluetooth: ${phone.others ? phone.others.Bluetooth: 'No information found'}</li>
+                                        <li>GPS: ${phone.others ? phone.others.GPS: 'No information found'}</li>
+                                        <li>NFC: ${phone.others ? phone.others.NFC: 'No information found'}</li>
+                                        <li>Radio: ${phone.others ? phone.others.Radio: 'No information found'}</li>
+                                        <li>USB: ${phone.others ? phone.others.USB: 'No information found'}</li>
+                                        <li>WLAN: ${phone.others ? phone.others.WLAN: 'No information found'}</li>
                                     </ul>
                                 </li>
                             </ul>
