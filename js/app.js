@@ -56,36 +56,34 @@ const displayDetails = phone => {
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <img src="${phone.image}" class="img-fluid rounded-start w-50" alt="phone-image">
+                    <img src="${phone.image}" class="img-fluid rounded-start w-75" alt="phone-image">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">${phone.name}</h4>
                         <h5 class="card-text">${phone.releaseDate ? phone.releaseDate: 'No Release Date Found'}</h5>
-                        <p class="card-text">
-                            <ul class="list-unstyled">
-                                <li class="h5">Main Features</li>
-                                <li><span class="h6">CPU:</span> ${phone.mainFeatures.chipSet}</li>
-                                <li><span class="h6">Display:</span> ${phone.mainFeatures.displaySize}</li>
-                                <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
-                                <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
-                                <li><span class="h6">Sensors:</span>
-                                    <ul id="sensors">
-                                        
-                                    </ul>
-                                </li>
-                                <li><span class="h6">Others:</span>
-                                    <ul id="others" class="list-unstyled">
-                                        <li>Bluetooth: ${phone.others ? phone.others.Bluetooth: 'No information found'}</li>
-                                        <li>GPS: ${phone.others ? phone.others.GPS: 'No information found'}</li>
-                                        <li>NFC: ${phone.others ? phone.others.NFC: 'No information found'}</li>
-                                        <li>Radio: ${phone.others ? phone.others.Radio: 'No information found'}</li>
-                                        <li>USB: ${phone.others ? phone.others.USB: 'No information found'}</li>
-                                        <li>WLAN: ${phone.others ? phone.others.WLAN: 'No information found'}</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </p>
+                        <ul class="list-unstyled">
+                            <li class="h5">Main Features</li>
+                            <li><span class="h6">CPU:</span> ${phone.mainFeatures.chipSet}</li>
+                            <li><span class="h6">Display:</span> ${phone.mainFeatures.displaySize}</li>
+                            <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
+                            <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
+                            <li><span class="h6">Sensors:</span>
+                                <ul id="sensors">
+                                    
+                                </ul>
+                            </li>
+                            <li><span class="h6">Others:</span>
+                                <ul id="others" class="list-unstyled">
+                                    <li>Bluetooth: ${phone.others ? phone.others.Bluetooth: 'No information found'}</li>
+                                    <li>GPS: ${phone.others ? phone.others.GPS: 'No information found'}</li>
+                                    <li>NFC: ${phone.others ? phone.others.NFC: 'No information found'}</li>
+                                    <li>Radio: ${phone.others ? phone.others.Radio: 'No information found'}</li>
+                                    <li>USB: ${phone.others ? phone.others.USB: 'No information found'}</li>
+                                    <li>WLAN: ${phone.others ? phone.others.WLAN: 'No information found'}</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
