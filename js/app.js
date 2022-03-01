@@ -57,7 +57,6 @@ const loadDetails = phoneId => {
 // Display Details
 const displayDetails = phone => {
     const detailsContainer = document.getElementById('phone-details');
-    console.log(phone);
     detailsContainer.innerHTML = `
         <div class="card mb-3">
             <div class="row g-0">
