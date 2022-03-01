@@ -18,6 +18,7 @@ const displayPhones = phones => {
         return;
     }
     document.getElementById('phone-container').innerHTML = '';
+    document.getElementById('phone-details').innerHTML = '';
     document.getElementById('no-result').style.display = 'none';
     const phoneContainer = document.getElementById('phone-container');
     const twentyPhones = phones.slice(0, 20);
@@ -50,7 +51,7 @@ const loadDetails = phoneId => {
 // Display Details
 const displayDetails = phone => {
     const detailsContainer = document.getElementById('phone-details');
-    console.log(phone.mainFeatures)
+    // console.log(phone.mainFeatures)
     detailsContainer.innerHTML = `
         <div class="card mb-3">
             <div class="row g-0">
@@ -68,7 +69,7 @@ const displayDetails = phone => {
                                 <li><span class="h6">Display:</span> ${phone.mainFeatures.displaySize}</li>
                                 <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
                                 <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
-                                <li>Sensors:
+                                <li><span class="h6">Sensors:</span>
                                 <ul id="sensors">
                                     
                                 </ul>
@@ -81,4 +82,16 @@ const displayDetails = phone => {
             </div>
         </div>
     `;
+    const sensors = phone.mainFeatures.sensors;
+    getSensors(sensors);
+}
+
+const getSensors = sensors => {
+    const sensorUl = document.getElementById('sensors');
+    sensors.forEach(sensor => {
+        console.log(sensor);
+        const li = document.createElement('li');
+        li.innerText = sensor;
+        sensorUl.appendChild(li);
+    })
 }
