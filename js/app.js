@@ -51,7 +51,7 @@ const loadDetails = phoneId => {
 // Display Details
 const displayDetails = phone => {
     const detailsContainer = document.getElementById('phone-details');
-    // console.log(phone.mainFeatures)
+    console.log(phone);
     detailsContainer.innerHTML = `
         <div class="card mb-3">
             <div class="row g-0">
@@ -61,7 +61,7 @@ const displayDetails = phone => {
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">${phone.name}</h4>
-                        <h5 class="card-text">${phone.releaseDate}</h5>
+                        <h5 class="card-text">${phone.releaseDate ? phone.releaseDate: 'No Release Date Found'}</h5>
                         <p class="card-text">
                             <ul class="list-unstyled">
                                 <li class="h5">Main Features</li>
@@ -70,11 +70,15 @@ const displayDetails = phone => {
                                 <li><span class="h6">Storage:</span> ${phone.mainFeatures.storage}</li>
                                 <li><span class="h6">Memory:</span> ${phone.mainFeatures.memory}</li>
                                 <li><span class="h6">Sensors:</span>
-                                <ul id="sensors">
-                                    
-                                </ul>
+                                    <ul id="sensors">
+                                        
+                                    </ul>
                                 </li>
-                                <li>This may still come in handy in some situations.</li>
+                                <li><span class="h6">Others:</span>
+                                    <ul id="others">
+                                        
+                                    </ul>
+                                </li>
                             </ul>
                         </p>
                     </div>
@@ -86,10 +90,10 @@ const displayDetails = phone => {
     getSensors(sensors);
 }
 
+// sensors
 const getSensors = sensors => {
     const sensorUl = document.getElementById('sensors');
     sensors.forEach(sensor => {
-        console.log(sensor);
         const li = document.createElement('li');
         li.innerText = sensor;
         sensorUl.appendChild(li);
