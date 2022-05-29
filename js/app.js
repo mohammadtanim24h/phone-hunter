@@ -98,7 +98,7 @@ const displayDetails = phone => {
     getSensors(sensors);
 }
 
-// sensors
+// adding sensors to ul
 const getSensors = sensors => {
     const sensorUl = document.getElementById('sensors');
     sensors.forEach(sensor => {
